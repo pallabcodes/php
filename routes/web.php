@@ -8,8 +8,14 @@ Route::get("/", function () {
 
 // used the name alias so that it could be used within a blade file using "{{  route("about") }}"
 Route::get("/about", function () {
-    return "This is about page";
+    return view("about.index");
 })->name("about");
+
+Route::get("/contact", function () {
+    $title = "Contact Page";
+    $books = ["How to draw", "Thinking in perspective", "chracter design by tb choi", "learn to write unforgettable stories"];
+    return view("contact.index", ["title" => $title, "books" => $books]);
+});
 
 Route::get("/users/{id}/{slug}", function ($id, $slug) {
     return "Hello, user " . $id . "-" . $slug;
