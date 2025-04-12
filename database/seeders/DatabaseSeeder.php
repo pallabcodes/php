@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\MyBlog;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        MyBlog::factory(10)->create(); // or diretly run from tinker: App\Models\MyBlog::factory(10)->create();
+        // MyBlog::factory(10)->create(); // or diretly run from tinker: App\Models\MyBlog::factory(10)->create();
+
+        Product::factory(10)->create();
 
         // But if the said model has a factory then it can be used like below in this file 
         // User::factory(10)->create();
