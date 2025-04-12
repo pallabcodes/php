@@ -3,6 +3,8 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleActionController;
+use App\Models\Blog;
+use App\Models\MyBlog;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", [HomeController::class, 'index']);
@@ -45,7 +47,12 @@ Route::get("/users/{id}/{slug}", function ($id, $slug) {
 // Route::put("/blogs/create", [BlogController::class, "update"])->name('blog.update');
 // Route::delete("/blogs/create", [BlogController::class, "delete"])->name('blog.delete');
 
-Route::resource("/blogs", BlogController::class); // Register all routes from this class, this also creates named alias explicitly
+// Route::resource("/blogs", BlogController::class); // Register all routes from this class, this also creates named alias explicitly
+
+Route::get("/blogs", function () {
+    $blogs = MyBlog::all(); // SELECT * FROM blogs;
+    dd($blogs);
+});
 
 
 // Fallback Route (when hitting an endpoint that doesn't exist then it render/return this response from this route)
