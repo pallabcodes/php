@@ -74,7 +74,7 @@
     </header>
 
     <main>
-      {{-- contents from welcome.blade.php will show within below main tag --}}
+        {{-- contents from welcome.blade.php will show within below main tag --}}
         @yield('contents')
     </main>
 
@@ -93,6 +93,10 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    @stack('scripts')
+
+</body>
 </html>
